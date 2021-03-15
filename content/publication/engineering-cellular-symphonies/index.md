@@ -6,11 +6,11 @@ authors:
   - "Christopher P. Johnstone"
   - "Kate E. Galloway"
 
-date: 2021-03-15:14:42-05:00
+date: 2021-03-15
 doi: "10.1038/s41580-021-00359-5"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: 2021-03-15:14:42-05:00
+publishDate: 2021-03-15
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
