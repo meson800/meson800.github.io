@@ -264,8 +264,8 @@ plugins_js  = []
 ## Marketing
 ############################
 [marketing]
-  google_analytics = ""
-  google_tag_manager = ""
+  plausible_data_domain = "meson.us"
+  plausible_script = "https://plausible.meson.us/js/plausible.js"
 
 ############################
 ## Content Management System
