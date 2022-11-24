@@ -47,9 +47,6 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/christopher-johnstone-95bba6132
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/ChrisPJohnstone
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
