@@ -66,7 +66,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	--sapphire:#209fb5;
 	--blue:#1e66f5;
 	--lavender:#7287fd;
-	--text:#4c4f69;
+	--text:#41424b;
 	--subtext1:#5c5f77;
 	--subtext0:#6c6f85;
 	--overlay2:#7c7f93;
@@ -117,13 +117,18 @@ header h1 {
     font-weight: 700;
     font-size: 4em;
     display: inline-block;
-    max-width: 5.5em;
+    flex-grow: 1;
+    width: min-content;
     line-height: 0.9;
-    margin: 16px 32px;
+    margin: 16px 24px 16px 32px;;
 }
 
 .home-link {
     text-decoration: none;
+    color: var(--teal);
+}
+
+.home-link:visited {
     color: var(--teal);
 }
 
@@ -134,6 +139,7 @@ header h1 {
     list-style-type: none;
     line-height: 1.2;
     font-weight: bold;
+    padding-left: 12px;
 }
 
 .header-links > li a {
@@ -159,7 +165,13 @@ hr {
 
 #content {
   background: var(--base);
-  margin: 32px;
+  margin: 10px 32px;
+  color: var(--text);
+}
+
+a {
+  color: var(--rosewater);
+  text-decoration: none;
 }
 
 .footer {
@@ -168,4 +180,11 @@ hr {
     border-bottom-left-radius: var(--box-radius);
     display: block;
     position: relative;
+    text-align: center;
+}
+
+.footer p {
+  color: var(--overlay1);
+  margin-left: 32px;
+  margin-right: 32px;
 }

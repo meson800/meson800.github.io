@@ -1,3 +1,10 @@
 {{ define "main" }}
-<h1 class="title">{{ .Site.Title }}</h1>
+<p>
+    {{ .Site.Params.intro | markdownify }}
+</p>
+{{ range .Pages.ByPublishDate.Reverse }}
+<p>
+    <h3><a class="title">{{ .Title }}</a></h3>
+</p>
+{{ end }}
 {{ end }}

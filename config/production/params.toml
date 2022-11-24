@@ -1,0 +1,3 @@
+[plausible]
+  data_domain = "meson.us"
+  script = "https://plausible.meson.us/js/plausible.js"
