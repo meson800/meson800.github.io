@@ -1,0 +1,15 @@
+<header role="banner">
+    <h1>
+        <a href="/" class="home-link">{{ .Site.Title }}</a>
+    </h1>
+    <ul class="header-links">
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{ .URL }}">{{ print .Name | upper | safeHTML }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</header>
+<div class="spacer">
+    <hr><hr>
+</div>

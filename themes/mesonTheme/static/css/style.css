@@ -1,0 +1,171 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+    --rosewater:#dc8a78;
+	--flamingo:#dd7878;
+	--pink:#ea76cb;
+	--mauve:#8839ef;
+	--red:#d20f39;
+	--maroon:#e64553;
+	--peach:#fe640b;
+	--yellow:#df8e1d;
+	--green:#40a02b;
+	--teal:#179299;
+	--sky:#04a5e5;
+	--sapphire:#209fb5;
+	--blue:#1e66f5;
+	--lavender:#7287fd;
+	--text:#4c4f69;
+	--subtext1:#5c5f77;
+	--subtext0:#6c6f85;
+	--overlay2:#7c7f93;
+	--overlay1:#8c8fa1;
+	--overlay0:#9ca0b0;
+	--surface2:#acb0be;
+	--surface1:#bcc0cc;
+	--surface0:#ccd0da;
+	--base:#eff1f5;
+	--mantle:#e6e9ef;
+	--crust:#dce0e8;
+  --box-radius:15px;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background: var(--crust);
+}
+
+#wrap {
+    width: 70%;
+    max-width: 45em;
+    min-height: 100%;
+    height: auto;
+    margin: 0px auto;
+}
+
+#inner-wrap {
+  background-color: var(--base);
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+    background: var(--base);
+    border-top-right-radius: var(--box-radius);
+    border-top-left-radius: var(--box-radius);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 4em;
+    display: inline-block;
+    max-width: 5.5em;
+    line-height: 0.9;
+    margin: 16px 32px;
+}
+
+.home-link {
+    text-decoration: none;
+    color: var(--teal);
+}
+
+.header-links {
+    display: inline-block;
+    margin: 0px 32px 0px auto;
+    text-align: right;
+    list-style-type: none;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.header-links > li a {
+    text-decoration: none;
+    color: var(--subtext0);
+}
+
+.header-links > li a:hover {
+    color: var(--text);
+}
+
+.spacer {
+  background: var(--base);
+  padding-bottom: 10px;
+}
+
+hr {
+  color: var(--teal);
+  margin-bottom: 3px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#content {
+  background: var(--base);
+  margin: 32px;
+}
+
+.footer {
+    background: var(--base);
+    border-bottom-right-radius: var(--box-radius);
+    border-bottom-left-radius: var(--box-radius);
+    display: block;
+    position: relative;
+}
