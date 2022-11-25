@@ -25,7 +25,7 @@ contact:
   link: 'mailto:cjohnsto@mit.edu'
 - icon: github
   link: https://github.com/meson800
-- icon: orcid1
+- icon: orcid
   link: https://orcid.org/0000-0002-7255-0218
 - icon: linkedin-square
   link: https://www.linkedin.com/in/christopher-johnstone-95bba6132

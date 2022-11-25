@@ -17,10 +17,10 @@
         {{- else -}}
           {{- .LinkTitle -}}
         {{- end -}}
-        {{- if isset .Params "author_notes" -}}
-          {{- with (index .Params.author_notes $index) -}}
-            <i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="{{.}}"></i>
-          {{- end -}} 
+        {{- if isset $.Params "author_notes" -}}
+            {{- with (index $.Params.author_notes $index) -}}
+            <span data-text="{{.}}" class="author-notes"><i class="icon-info-circle"></i></span>
+            {{- end -}} 
         {{- end -}}
       {{- end -}}
     </div>
