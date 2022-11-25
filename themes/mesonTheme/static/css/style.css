@@ -15,6 +15,7 @@
 */
 html, body {
   height: 100%;
+  width: 100vw; /* prevent shifting left/right when scrollbar appears */
 }
 /*
   Typographic tweaks!
@@ -89,6 +90,7 @@ body {
     min-height: 100%;
     height: auto;
     background: var(--crust);
+    overflow-x: hidden;
 }
 
 #wrap {
@@ -257,6 +259,34 @@ article {
   display: block;
 }
 
+#full-image {
+  margin: 25px;
+}
+
+#full-image img {
+  margin: auto;
+}
+
+#tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.tag-btn {
+  background: var(--base);
+  color: var(--text);
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0.5em;
+}
+
+.tag-btn:hover {
+  background: var(--surface0);
+}
+
 #about-container {
   display: flex;
   flex-direction: row;
@@ -340,6 +370,26 @@ article {
   margin-right: 5px;
 }
 
+.post-date {
+  text-align: right;
+  padding-right: 0.4em;
+}
+
+.post-featured {
+  width: 0.6em;
+}
+
+.post-featured .icon-star {
+  font-size: 0.6em;
+}
+
+.post-title a {
+  color: var(--text);
+}
+
+.post-title a:hover {
+  color: var(--claret);
+}
 
 .footer {
     background: var(--content_background);

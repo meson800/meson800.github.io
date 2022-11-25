@@ -42,7 +42,7 @@
 
   </div>
   {{ if ne $image nil }}
-    {{ $summary_image := $image.Fit "150x150" }}
+    {{ $summary_image := $image.Fit "150x150 webp q90" }}
     <div id="summary-image">
       <img src="{{ $summary_image.RelPermalink }}">
     </div>

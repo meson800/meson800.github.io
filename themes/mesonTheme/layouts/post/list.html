@@ -1,0 +1,50 @@
+{{ define "main" }}
+<h2>Most recent 5 posts</h2>
+<table>
+<tbody>
+    {{ range first 5 .Pages.ByPublishDate.Reverse }}
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <tr class="post-row">
+            <td class="post-date">
+                <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+            </td>
+            <td class="post-featured">
+                {{ if .Params.featured }}<span class="icon-star"></span>{{ end }}
+            </td>
+            <td class="post-title">
+                <a href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+            </td>
+        </tr>
+    {{ end }}
+
+</tbody>
+</table>
+
+<br>
+<h2>Posts by category</h2>
+{{ range .Pages.GroupByParam "category" }}
+<br>
+<h3>{{ .Key }}</h3>
+<table>
+<tbody>
+    {{ range .Pages }}
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2006" }}
+        <tr class="post-row">
+            <td class="post-date">
+                <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+            </td>
+            <td class="post-featured">
+                {{ if .Params.featured }}<span class="icon-star"></span>{{ end }}
+            </td>
+            <td class="post-title">
+                <a href="{{ .RelPermalink | safeURL }}">{{ .Title }}</a>
+            </td>
+        </tr>
+    {{ end }}
+
+</tbody>
+</table>
+{{ end }}
+{{ end }}
