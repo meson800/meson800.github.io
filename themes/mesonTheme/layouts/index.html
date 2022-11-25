@@ -1,7 +1,11 @@
 {{ define "main" }}
 <p>
-    {{ .Site.Params.intro | markdownify }}
+    {{ .Content }}
 </p>
+
+{{ range first 10 .Site.RegularPages }}
+    {{ .Render "summary" }}
+{{ end }}
 {{ range .Pages.ByPublishDate.Reverse }}
 <p>
     <h3><a class="title">{{ .Title }}</a></h3>

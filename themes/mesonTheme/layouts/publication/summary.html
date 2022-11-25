@@ -1,0 +1,50 @@
+{{ $image := (.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $pdf   := (.Resources.ByType "application").GetMatch "*.pdf" }}
+{{ $bib   := .Resources.GetMatch "cite.bib" }}
+
+<article class="publication">
+  <div id="summary-body">
+    <h3 class="summary-title"><a href='{{ .Permalink }}'>{{ .Title }} ({{ .Date.Format "2006" }})</a></h3>
+    {{ if isset .Params "journal" }}
+      <i>{{ .Param "journal" }}</i>
+    {{ end }}
+    {{/* Author list from https://github.com/wowchemy/wowchemy-hugo-themes, MIT license by Geo Cushen */}}
+    <div id="authors">
+      {{- range $index, $value := (.GetTerms "authors") -}}
+        {{- if gt $index 0 }}, {{ end -}}
+        {{- if .RelPermalink -}}
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- else -}}
+          {{- .LinkTitle -}}
+        {{- end -}}
+        {{- if isset .Params "author_notes" -}}
+          {{- with (index .Params.author_notes $index) -}}
+            <i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="{{.}}"></i>
+          {{- end -}} 
+        {{- end -}}
+      {{- end -}}
+    </div>
+    <div id="summary-buttons">
+      {{ if ne $pdf nil }}
+        <a class="summary-button" href="{{ $pdf.RelPermalink }}" target="_blank" rel="noopener">PDF</a>
+      {{ else }}
+        {{ if isset .Params "url_pdf" | and (ne (.Param "url_pdf") nil) }}
+          <a class="summary-button" href="{{ $.Params.url_pdf }}" target="_blank" rel="noopener">PDF</a>
+        {{ end }}
+      {{ end }}
+      {{ if ne $bib nil }}
+        <a class="summary-button" href="{{ $bib.RelPermalink }}" target="_blank" rel="noopener">Cite</a>
+      {{ end }}
+      {{ if isset $.Params "doi" }}
+        <a class="summary-button" href="https://doi.org/{{ $.Params.doi }}" target="_blank" rel="noopener">DOI</a>
+      {{ end }}
+    </div>
+
+  </div>
+  {{ if ne $image nil }}
+    {{ $summary_image := $image.Fit "150x150" }}
+    <div id="summary-image">
+      <img src="{{ $summary_image.RelPermalink }}">
+    </div>
+  {{ end }}
+</article>

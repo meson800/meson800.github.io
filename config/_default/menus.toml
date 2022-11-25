@@ -5,25 +5,25 @@
 
 [[main]]
   name = "About"
-  url = "#about"
+  url = "/about/"
   weight = 10
  
- [[main]]
-    name = "CV"
-    url = "media/cjohnsto_cv.pdf"
-    weight = 20
+[[main]]
+  name = "CV"
+  url = "/media/cjohnsto_cv.pdf"
+  weight = 20
 
 [[main]]
   name = "RSS"
-  url = "#rss"
+  url = "/rss_info/"
   weight=25
 
 [[main]]
   name = "Blog"
-  url = "#projects"
+  url = "/post/"
   weight = 30
 
 [[main]]
   name = "Publications"
-  url = "#posts"
+  url = "/publication/"
   weight = 40

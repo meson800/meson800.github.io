@@ -26,6 +26,7 @@ publication_types: ["2"]
 # Publication name and optional abbreviated publication name.
 publication: "Understanding and Engineering Chromatin as a Dynamical System across Length and Timescales"
 publication_short: ""
+journal: Cell Systems
 
 abstract: "Connecting the molecular structure and function of chromatin across length and timescales remains a grand challenge to understanding and engineering cellular behaviors. Across five orders of magnitude, dynamic processes constantly reshape chromatin structures, driving spaciotemporal patterns of gene expression and cell fate. Through the interplay of structure and function, the genome operates as a highly dynamic feedback control system. Recent experimental techniques have provided increasingly detailed data that revise and augment the relatively static, hierarchical view of genomic architecture with an understanding of how dynamic processes drive organization. Here, we review how novel technologies from sequencing, imaging, and synthetic biology refine our understanding of chromatin structure and function and enable chromatin engineering. Finally, we discuss opportunities to use these tools to enhance understanding of the dynamic interrelationship of chromatin structure and function."
 

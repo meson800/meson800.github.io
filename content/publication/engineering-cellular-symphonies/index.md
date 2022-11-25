@@ -21,6 +21,7 @@ publication_types: ["2"]
 # Publication name and optional abbreviated publication name.
 publication: "Engineering cellular symphonies out of transcriptional noise"
 publication_short: "Engineering cellular symphonies"
+journal: Nature Reviews Molecular Cell Biology
 
 abstract: "Development unfolds through a series of orchestrated spatial and temporal gene-expression patterns. Despite relying on the noisy process of transcription, expression patterns remain robust to myriad disturbances. To achieve the goal of building complex tissues from the bottom up, synthetic biology must learn how to buffer and harness transcriptional noise."
 

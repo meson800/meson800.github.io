@@ -52,7 +52,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
-    --rosewater:#dc8a78;
+  --rosewater:#dc8a78;
 	--flamingo:#dd7878;
 	--pink:#ea76cb;
 	--mauve:#8839ef;
@@ -62,6 +62,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	--yellow:#df8e1d;
 	--green:#40a02b;
 	--teal:#179299;
+  --claret:#861336;
 	--sky:#04a5e5;
 	--sapphire:#209fb5;
 	--blue:#1e66f5;
@@ -79,6 +80,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	--mantle:#e6e9ef;
 	--crust:#dce0e8;
   --box-radius:15px;
+  --content_background:white;
 }
 
 body {
@@ -89,7 +91,6 @@ body {
 }
 
 #wrap {
-    width: 70%;
     max-width: 45em;
     min-height: 100%;
     height: auto;
@@ -97,14 +98,18 @@ body {
 }
 
 #inner-wrap {
-  background-color: var(--base);
+  background-color: var(--content_background);
   margin: 0px;
   display: flex;
   flex-direction: column;
+  max-width: 45em;
+  min-height: 100%;
+  height: auto;
+  margin: 0px auto;
 }
 
 header {
-    background: var(--base);
+    background: var(--content_background);
     border-top-right-radius: var(--box-radius);
     border-top-left-radius: var(--box-radius);
     display: flex;
@@ -152,7 +157,7 @@ header h1 {
 }
 
 .spacer {
-  background: var(--base);
+  background: var(--content_background);
   padding-bottom: 10px;
 }
 
@@ -164,18 +169,48 @@ hr {
 }
 
 #content {
-  background: var(--base);
+  background: var(--content_background);
   margin: 10px 32px;
   color: var(--text);
 }
 
 a {
-  color: var(--rosewater);
+  color: var(--claret);
   text-decoration: none;
 }
 
+#authors a {
+  color: var(--text);
+}
+#authors a:hover {
+  text-decoration: underline;
+}
+
+a.summary-button {
+  display: inline-block;
+  padding: 1px 5px 1px 5px;
+  border: 1px solid var(--claret);
+  border-radius: 5px;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+
+a.summary-button:hover {
+  background-color: var(--claret);
+  color: white;
+}
+
+article {
+  background: var(--base);
+  display: flex;
+}
+
+#summary-buttons {
+  display: block;
+}
+
 .footer {
-    background: var(--base);
+    background: var(--content_background);
     border-bottom-right-radius: var(--box-radius);
     border-bottom-left-radius: var(--box-radius);
     display: block;
@@ -184,7 +219,7 @@ a {
 }
 
 .footer p {
-  color: var(--overlay1);
+  color: var(--subtext1);
   margin-left: 32px;
   margin-right: 32px;
 }
