@@ -195,6 +195,14 @@ a.summary-button {
   margin-right: 0.5em;
 }
 
+.summary-title a {
+  color: var(--text);
+}
+
+.summary-title a:hover {
+  color: var(--claret);
+}
+
 a.summary-button:hover {
   background-color: var(--claret);
   color: white;
@@ -202,7 +210,23 @@ a.summary-button:hover {
 
 article {
   background: var(--base);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
+  align-items: center;
+}
+
+#summary-image {
+  height: 150px;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+#summary-body {
+  margin-right:32px;
 }
 
 #summary-buttons {
