@@ -4,4 +4,11 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     {{ $title := .Title }}
     <title>{{ $title }}</title>
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Posts and publications by Christopher Johnstone">
+
+    {{ $plausible_dd := site.Params.plausible.data_domain  | default "" }}
+    {{ $plausible_js := site.Params.plausible.script  | default "" }}
+    {{ if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") | and $plausible_dd | and $plausible_js}}
+    <script async defer data-domain="{{$plausible_dd}}" src="{{$plausible_js}}"></script>
+    {{ end }}
 </head>

@@ -6,7 +6,7 @@
 # Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
 
 # Title of your site
-title = "Christopher Johnstone"
+title = "meson"
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
@@ -15,6 +15,8 @@ baseurl = "https://www.meson.us/"
 copyright = "Christopher Johnstone 2022"
 
 theme = "mesonTheme"
+
+disableKinds = ["rss_info"]
 
 
 ############################
@@ -32,15 +34,8 @@ enableGitInfo = true
   publication_types = "/publication-type/:slug/"
 
 [outputs]
-  home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
+  home = [ "HTML", "RSS" ]
   section = [ "HTML", "RSS" ]
-
-[mediaTypes."application/manifest+json"]
-  suffixes = ["webmanifest"]
-
-[outputFormats.WebAppManifest]
-  mediaType = "application/manifest+json"
-  rel = "manifest"
 
 # Configure the Markdown renderer.
 [markup]

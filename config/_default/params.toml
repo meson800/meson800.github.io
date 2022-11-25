@@ -1,3 +1,5 @@
+author = "Christopher Johnstone"
+
 privacy_policy = """\
                  This site uses a self-hosted [Plausible](https://plausible.io/) instance \
                  for visitor counting in a cookie-free, open-source, and privacy-preserving manner.

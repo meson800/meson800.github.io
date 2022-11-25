@@ -1,0 +1,16 @@
+{{ define "main" }}
+<h1><i class="icon-rss-square"></i> {{ .Title }}</h1>
+
+{{ .Content }}
+
+<ul>
+{{ with .Params.feeds }}
+{{ range . }}
+    <li>
+        <a href="{{ .url | safeURL }}" target="_blank"><i class="icon-rss-square"></i> {{ .name }}</a>
+    </li>
+{{ end }}
+{{ end }}
+</ul>
+
+{{ end }}

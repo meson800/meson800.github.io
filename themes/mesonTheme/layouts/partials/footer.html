@@ -5,9 +5,3 @@
 <p>{{ .Site.Params.privacy_policy | markdownify }}</p>
 <p>&copy; {{ .Site.Copyright }}</p>
 </div>
-
-{{ $plausible_dd := site.Params.plausible.data_domain  | default "" }}
-{{ $plausible_js := site.Params.plausible.script  | default "" }}
-{{ if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") | and $plausible_dd | and $plausible_js}}
-<script async defer data-domain="{{$plausible_dd}}" src="{{$plausible_js}}"></script>
-{{ end }}
