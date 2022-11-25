@@ -29,7 +29,7 @@ summary: ""
 
 tags: ["supercoiling", "DNA supercoiling", "gene circuits", "synthetic biology", "stochastic simulations", "transcriptional dynamics", "noise", "gene expression", "transcriptional bursting"]
 categories: ["primary research"]
-featured: false
+featured: true
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.

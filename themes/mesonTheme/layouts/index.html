@@ -3,12 +3,30 @@
     {{ .Content }}
 </p>
 
-{{ range first 10 .Site.RegularPages }}
+<div class="interspacer">
+    <hr>
+</div>
+<h2 class="recent-list">Recent publications <a href="/publication">(see more)</a></h2>
+
+{{ range first 3 (where (where .Site.Pages "Type" "==" "publication" ) "Params.featured" "==" true) }}
     {{ .Render "summary" }}
 {{ end }}
-{{ range .Pages.ByPublishDate.Reverse }}
-<p>
-    <h3><a class="title">{{ .Title }}</a></h3>
-</p>
+
+<div class="interspacer">
+    <hr>
+</div>
+<h2 class="recent-list">Recent posts <a href="/post">(see more)</a></h2>
+
+{{ range first 3 (where (where .Site.Pages "Type" "==" "post") ".Kind" "==" "page")}}
+    <article class="post">
+    <div id="summary-body">
+    <p>
+        <h3 class="summary-title"><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ partial "metadata.html" . }}
+        <a class="summary" href="{{ .RelPermalink }}">
+            <p>{{ .Summary }}</p>
+        </a>
+    </p>
+    </article>
 {{ end }}
 {{ end }}

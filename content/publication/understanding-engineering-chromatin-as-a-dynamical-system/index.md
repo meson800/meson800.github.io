@@ -35,7 +35,7 @@ summary: ""
 
 tags: ["chromatin", "chromatin dynamics", "super-resolution microscopy", "Hi-C", "contact domains", "TAD", "Micro-C", "NGS", "synthetic biology", "nuclear architecture", "supercoiling", "cellular reprogramming"]
 categories: ["reviews"]
-featured: false
+featured: true
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.

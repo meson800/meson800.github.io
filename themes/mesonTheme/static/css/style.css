@@ -156,6 +156,16 @@ header h1 {
     color: var(--text);
 }
 
+.interspacer {
+  padding-bottom: 5px;
+  padding-top: 1.5em;
+}
+
+.interspacer hr {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .spacer {
   background: var(--content_background);
   padding-bottom: 10px;
@@ -206,6 +216,18 @@ a.summary-button {
 a.summary-button:hover {
   background-color: var(--claret);
   color: white;
+}
+
+h2.recent-list a {
+  color: var(--text);
+}
+
+h2.recent-list a:hover {
+  color: var(--claret);
+}
+
+a.summary {
+  color: var(--text);
 }
 
 article {

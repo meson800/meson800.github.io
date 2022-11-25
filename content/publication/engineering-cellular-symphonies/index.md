@@ -30,7 +30,7 @@ summary: ""
 
 tags: ["synthetic biology", "transcriptional noise", "intrinsic noise", "extrinsic noise", "development", "tissues"]
 categories: ["reviews"]
-featured: false
+featured: true
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
