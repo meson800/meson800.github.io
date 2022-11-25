@@ -1,0 +1,71 @@
+{{ define "main" }}
+{{ if not (isset .Params "author") }}
+    {{ errorf "No author set in the about/_index.md frontmatter!" }}
+{{ end }}
+{{ $author_page := site.GetPage (printf "authors/%s" .Params.author )}}
+{{ if not $author_page }}
+    {{ errorf "Author set in about/_index.md frontmatter, but could not find corresponding author page!" }}
+{{ end }}
+
+{{ $avatar := ($author_page.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ $avatar_image := $avatar.Fill "270x270 Center" }}
+
+<div id="about-container">
+    <div id="about-summary">
+        <img class="avatar avatar-circle" width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}"
+             src="{{ $avatar_image.RelPermalink }}" alt="{{ $author_page.Title }}">
+        <h2>{{- $author_page.Title -}}</h2>
+        <ul class="contact-icons">
+            {{ range $author_page.Params.contact }}
+                <li>
+                    <a href="{{ .link | safeURL }}" target="_blank" rel="noopener" aria-label="{{ .icon }}">
+                        <i class="icon-{{ .icon }}"></i>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+    <div id="about-details">
+    
+    {{ with $author_page.Params.organizations }}
+    <h3>Affiliations</h3>
+    <ul class="affil-list">
+        {{ range . }}
+        <li>
+            <p> {{ .role }} </p>
+            <a href="{{ .url | safeURL }}" alt="{{ .name }}" target="_blank" rel="noopener"> {{ .name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ with $author_page.Params.education }}
+    <h3>Education</h3>
+    <ul class="education-list">
+        {{ range .courses }}
+        <li>
+            <i class="icon-graduation-cap"></i>
+            <div>
+
+            <p>{{ .course }}</p>
+            <p>{{ .year }}</p>
+            <p>{{ .institution }}</p>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    </div>
+</div>
+
+<div class="interspacer">
+    <hr>
+</div>
+
+<div id="author-content">
+{{ $author_page.Content }}
+</div>
+
+
+{{ end }}

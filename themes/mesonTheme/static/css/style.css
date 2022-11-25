@@ -81,6 +81,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	--crust:#dce0e8;
   --box-radius:15px;
   --content_background:white;
+  font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
 }
 
 body {
@@ -125,7 +126,7 @@ header h1 {
     flex-grow: 1;
     width: min-content;
     line-height: 0.9;
-    margin: 16px 24px 16px 32px;;
+    margin: 16px 24px 16px 32px;
 }
 
 .home-link {
@@ -237,12 +238,13 @@ article {
   margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #summary-image {
   height: 150px;
   flex-shrink: 0;
+  align-self: center;
   margin-left: auto;
   margin-right: 0px;
 }
@@ -254,6 +256,90 @@ article {
 #summary-buttons {
   display: block;
 }
+
+#about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#about-details h3 {
+  margin-top: 1em;
+}
+
+#about-details h3:first-of-type {
+  margin-top: 0;
+}
+
+#about-summary {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+}
+
+#about-details {
+  flex-shrink: 1;
+  max-width: 22em;
+}
+
+#author-content p {
+  margin-top: 1em;
+}
+
+#author-content p:first-of-type {
+  margin-top: 0;
+}
+
+.avatar-circle {
+  border-radius: 50%;
+  border: 3px solid var(--teal);
+}
+
+.contact-icons {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-icons li a {
+  color: var(--teal);
+}
+
+.contact-icons li {
+  margin-left: 10px;
+  font-size: 2.5rem;
+}
+
+.contact-icons li:hover {
+  transform: scale(1.1);
+}
+
+.contact-icons li:first-of-type {
+  margin-left: 0;
+}
+
+.affil-list {
+  padding-left: 25px;
+}
+
+.education-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education-list li {
+  display: flex;
+}
+
+.education-list li .icon-graduation-cap {
+  padding-top: 6px;
+  margin-right: 5px;
+}
+
 
 .footer {
     background: var(--content_background);
@@ -268,4 +354,57 @@ article {
   color: var(--subtext1);
   margin-left: 32px;
   margin-right: 32px;
+}
+
+/* Icon font CSS */
+@font-face {
+  font-family: 'mesonicons';
+  src:
+    url('/fonts/mesonicons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mesonicons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-biorxiv:before {
+  content: "\e901";
+}
+.icon-orcid1:before {
+  content: "\e902";
+}
+.icon-pubmed:before {
+  content: "\e903";
+}
+.icon-star:before {
+  content: "\f005";
+}
+.icon-linkedin-square:before {
+  content: "\f08c";
+}
+.icon-github:before {
+  content: "\f09b";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-calendar:before {
+  content: "\f133";
+}
+.icon-graduation-cap:before {
+  content: "\f19d";
 }

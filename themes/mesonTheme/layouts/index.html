@@ -1,6 +1,6 @@
 {{ define "main" }}
 <p>
-    {{ .Content }}
+    {{- .Content -}}
 </p>
 
 <div class="interspacer">
@@ -18,15 +18,6 @@
 <h2 class="recent-list">Recent posts <a href="/post">(see more)</a></h2>
 
 {{ range first 3 (where (where .Site.Pages "Type" "==" "post") ".Kind" "==" "page")}}
-    <article class="post">
-    <div id="summary-body">
-    <p>
-        <h3 class="summary-title"><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        {{ partial "metadata.html" . }}
-        <a class="summary" href="{{ .RelPermalink }}">
-            <p>{{ .Summary }}</p>
-        </a>
-    </p>
-    </article>
+    {{ .Render "summary" }}
 {{ end }}
 {{ end }}

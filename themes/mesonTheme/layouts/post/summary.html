@@ -1,0 +1,19 @@
+{{ $image := (.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+
+<article class="post">
+  <div id="summary-body">
+    <h3 class="summary-title"><a href='{{ .Permalink }}'>{{ .Title }}</a></h3>
+    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    <a class="summary" href="{{ .RelPermalink }}">
+        <p>{{ .Summary }}</p>
+    </a>
+  </div>
+  {{ if ne $image nil }}
+    {{ $summary_image := $image.Fit "150x150" }}
+    <div id="summary-image">
+      <img src="{{ $summary_image.RelPermalink }}">
+    </div>
+  {{ end }}
+</article>

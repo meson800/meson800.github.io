@@ -7,23 +7,24 @@
   name = "About"
   url = "/about/"
   weight = 10
- 
-[[main]]
-  name = "CV"
-  url = "/media/cjohnsto_cv.pdf"
-  weight = 20
-
-[[main]]
-  name = "RSS"
-  url = "/rss_info/"
-  weight=25
 
 [[main]]
   name = "Blog"
   url = "/post/"
+  weight = 20
+ 
+[[main]]
+  name = "CV"
+  url = "/media/cjohnsto_cv.pdf"
   weight = 30
+
+[[main]]
+  name = "RSS"
+  url = "/rss_info/"
+  weight=40
+
 
 [[main]]
   name = "Publications"
   url = "/publication/"
-  weight = 40
+  weight = 50

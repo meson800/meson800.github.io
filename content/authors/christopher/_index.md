@@ -5,53 +5,30 @@ title: Christopher Johnstone
 # Is this the primary user of the site?
 superuser: true
 
-# Role/position
-role: PhD Student
-
 # Organizations/Affiliations
 organizations:
 - name: Galloway Lab, Department of Chemical Engineering, MIT
   url: "https://gallowaylab.mit.edu"
-
-interests:
-- Cellular circuit engineering
-- Cellular reprogramming
-- Computer science
+  role: PhD Student
 
 education:
   courses:
-  - course: PhD student in chemical engineering
+  - course: PhD, Chemical Engineering
     institution: Massachusetts Institute of Technology
     year: 2019-ongoing
-  - course: BSc in Chemical Engineering, minor in Computer Science
-    institution: Califonia Institute of Technology
+  - course: BSc, Chemical Engineering; Minor, Computer Science
+    institution: California Institute of Technology
     year: 2019
 
-# Social/Academic Networking
-# For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
-social:
+contact:
 - icon: envelope
-  icon_pack: fas
-  link: 'mailto:cjohnsto@mit.edu'  # For a direct email link, use "mailto:test@example.org".
+  link: 'mailto:cjohnsto@mit.edu'
 - icon: github
-  icon_pack: fab
   link: https://github.com/meson800
-- icon: orcid
-  icon_pack: ai
+- icon: orcid1
   link: https://orcid.org/0000-0002-7255-0218
-- icon: linkedin
-  icon_pack: fab
+- icon: linkedin-square
   link: https://www.linkedin.com/in/christopher-johnstone-95bba6132
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
-
-# Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
 
 # Highlight the author in author lists? (true/false)
 highlight_name: false
@@ -63,12 +40,16 @@ highlight_name: false
 #- Visitors
 ---
 
-I'm a PhD student at MIT working in the Galloway Lab. Out of all of the systems that chemical engineers
+Out of all of the systems that chemical engineers
 examine, I've found that biological systems are the most fascinating, complex, and challenging systems
-we could possibly dream of working with.
+we could dream of working with. Specifically for me, the specific challenge raised by supercoiling in eukaryotic cells
+lets me happily explore both modeling and experimental implications.
 
-I've also always enjoyed coding. My favorite language was and still is C++; I've written several toy
-projects and contributed to several open-source development efforts with C++. I also enjoy Python, and use it
-pretty frequently as my go-to "glue", data-analysis, or prototyping language.
+I also enjoy programming. I currently administer several personal websites, in addition to the [Sidney-Pacific](https://sidpac.mit.edu) website. I also actively maintain several Github projects:
 
-When I'm not doing research or programming, I like to dabble: 3D modeling and animation, video editing, sailing, quadcopter construction, rocket building have all been recent interests of mine.
+- [rushd](https://github.com/GallowayLabMIT/rushd), for reproducible data analysis in Python.
+- [touchstone-auth](https://github.com/meson800/touchstone-auth), for programmatically accessing MIT services.
+- [cydnus](https://github.com/meson800/cydnus), a open-source flow cytometry analysis package.
+
+
+When I'm not doing research or programming, I like to dabble: 3D modeling and animation, video editing, sailing, quadcopters, and rocket building have all been recent interests of mine. The posts on this website may be eclectic as a result :)
