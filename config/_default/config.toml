@@ -51,7 +51,7 @@ enableGitInfo = true
 
 [imaging]
   resampleFilter = "lanczos"
-  quality = 75
+  quality = 90
   anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
 
 # Taxonomies.

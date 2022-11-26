@@ -365,6 +365,19 @@ article {
   margin-top: 1em;
 }
 
+#content p {
+  margin-top: 1em;
+}
+
+#content h2 {
+  margin-top: 1em;
+}
+
+#content img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #author-content p:first-of-type {
   margin-top: 0;
 }
