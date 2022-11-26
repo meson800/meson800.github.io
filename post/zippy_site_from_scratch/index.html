@@ -1,7 +1,7 @@
 <!doctype html><html lang=en><head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Building a new website that loads with less than 110kB and in under 300ms.">
+<meta name=description content="Building a new website that loads with less than 100kB and in under 300ms.">
 <link rel=stylesheet type=text/css href=/css/style.css>
 <title>Zippy Site from Scratch</title>
 <link rel=alternate type=application/rss+xml href=/index.xml title="Posts and publications by Christopher Johnstone">
@@ -106,8 +106,6 @@ My entire site loads without Javascript (except the Plausible script).</li>
 in <strong>282ms</strong>. I&rsquo;ll take a 10x decrease in page size and a 4x decrease in page render time!
 As a note, the largest transfer at 34kB is actually now the favicon which does not block
 page loading.</p>
-<p><em>Note: after writing this, I updated how the main page publications loaded, so we are now
-up to 110kB due to an extra image</em></p>
 <p>Finally, while Lighthouse (Google&rsquo;s page-load benchmarker) scores are probably a metric you
 shouldn&rsquo;t be explicitly optimizing for, it was nice to see 100% Lighthouse scores from my template!</p>
 <p><img src=final_lighthouse.png alt="Google Lighthouse results showing 100% in each category"></p>
