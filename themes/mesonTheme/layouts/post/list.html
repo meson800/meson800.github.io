@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h2>Most recent 5 posts</h2>
+<h2>Recent posts</h2>
 <table>
 <tbody>
     {{ range first 5 .Pages.ByPublishDate.Reverse }}
@@ -21,8 +21,7 @@
 </tbody>
 </table>
 
-<br>
-<h2>Posts by category</h2>
+<h2>All posts by category</h2>
 {{ range .Pages.GroupByParam "category" }}
 <br>
 <h3>{{ .Key }}</h3>

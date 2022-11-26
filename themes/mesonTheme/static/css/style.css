@@ -391,6 +391,10 @@ article {
   margin-top: 1em;
 }
 
+#content h2:first-of-type {
+  margin-top: 0;
+}
+
 #content img {
   margin-left: auto;
   margin-right: auto;
