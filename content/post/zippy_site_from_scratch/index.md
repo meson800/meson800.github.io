@@ -2,7 +2,7 @@
 
 title: "Zippy Site from Scratch"
 subtitle: ""
-summary: "Building a new website that loads with less than 110kB and in under 300ms."
+summary: "Building a new website that loads with less than 100kB and in under 300ms."
 authors: []
 tags: []
 category: Web Development
@@ -89,9 +89,6 @@ The page now transfers just **75 kB** and loads
 in **282ms**. I'll take a 10x decrease in page size and a 4x decrease in page render time!
 As a note, the largest transfer at 34kB is actually now the favicon which does not block
 page loading.
-
-_Note: after writing this, I updated how the main page publications loaded, so we are now
-up to 110kB due to an extra image_
 
 Finally, while Lighthouse (Google's page-load benchmarker) scores are probably a metric you
 shouldn't be explicitly optimizing for, it was nice to see 100% Lighthouse scores from my template!
