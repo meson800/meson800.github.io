@@ -16,7 +16,7 @@ education:
   - course: PhD, Chemical Engineering
     institution: Massachusetts Institute of Technology
     year: 2019-ongoing
-  - course: BSc, Chemical Engineering; Minor, Computer Science
+  - course: BSc, Chemical Engineering; Minor, CS
     institution: California Institute of Technology
     year: 2019
 

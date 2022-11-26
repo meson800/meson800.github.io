@@ -361,6 +361,14 @@ article {
   max-width: 22em;
 }
 
+#about-details .education-list p {
+  margin-top: 0;
+}
+
+.institution {
+  color: var(--subtext0);
+}
+
 #author-content p {
   margin-top: 1em;
 }
