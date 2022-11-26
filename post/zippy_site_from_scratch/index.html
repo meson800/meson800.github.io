@@ -1,0 +1,45 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Building a new website that loads with less than 100kB and in under 300ms."><link rel=stylesheet type=text/css href=/css/style.css><title>Zippy Site from Scratch</title><link rel=alternate type=application/rss+xml href=/index.xml title="Posts and publications by Christopher Johnstone"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><script async defer data-domain=meson.us src=https://plausible.meson.us/js/plausible.js></script></head><body><div id=wrap><header role=banner><h1><a href=/ class=home-link>Christopher Johnstone</a></h1><ul class=header-links><li><a href=/about/>ABOUT</a></li><li><a href=/post/>BLOG</a></li><li><a href=/media/cjohnsto_cv.pdf>CV</a></li><li><a href=/rss_info/>RSS</a></li><li><a href=/publication/>PUBLICATIONS</a></li></ul></header><div class=spacer><hr><hr></div><div id=inner-wrap><div id=content><h1>Zippy Site from Scratch</h1><i data-feather=calendar></i><time datetime=2022-11-24>Nov 24, 2022</time><br><br><div id=content><p>In the dark ages of mid-2020, a recommended repository came across my Github feed.
+What was this <a href=https://github.com/wowchemy/starter-hugo-academic>Academic template</a>?
+I had bumped into static-site generators previously, but hadn&rsquo;t seen a template that
+caught my fancy. As a recently-started PhD student though, sitting down and finally
+creating a site would be helpful.</p><p>The template was a <a href=https://gohugo.io>Hugo</a> template, a Go-powered templating engine
+that (mostly) deals with rendering Markdown content files. The Academic template ended
+up being super easy to use (props to Geo Cushen, the creator!), and made attractive
+website design easy, such as in the publication view:</p><p><img src=old_publications.png alt="Old Academic template view of publications"></p><h2 id=in-pursuit-of-single-domain-best-practices>In pursuit of single-domain best practices</h2><p>Coming back a few months later to the website, I realized (after installing
+<a href=https://www.localcdn.org/>LocalCDN</a>, an extension that redirects remote
+calls to content delivery networks), that my website, like many others out there,
+made a bunch of requests to other external sites, in order to load scripts, fonts,
+and CSS to make the web page work.</p><p>Why were these loading from remote websites? With the advent of shared resources like
+Bootstrap, Google Fonts, and others, the idea was that multiple sites should share
+this cache. If your site used a font or helper library that some other site had
+already loaded from the cache, you could use it &ldquo;for free&rdquo; without requiring an
+extra download!</p><p>This came crashing down when advertisers and others realized you could use this
+for tracking. If you <em>timed</em> the time it took to load resources, you could
+see which resources loaded instantly vs those that needed to hit the network
+and use this to calculate a tracking fingerprint. Sad. Browsers responded
+by enforcing cache partitioning, with <a href="https://bugs.webkit.org/show_bug.cgi?id=110269">Safari</a>
+starting around 2013 and other browsers following.</p><p>Loading resources from other websites <em>also</em> means that your users are telling
+those websites that they visited your website. To fix this, I decided to vendor
+all of my dependencies, effectively making sure that I was serving all fonts,
+CSS, and JavaScript from my domain. Problem solved, right?</p><h2 id=further-room-to-shrink-the-site>Further room to shrink the site</h2><p>While I may have plugged the last privacy hole, I realized that
+I was still loading a lot of information to deliver admittedly simple
+content. Each load of my homepage was transferring almost 800kB of data
+and making many requests. Even on a fast connection, rendering only finished
+after <em>832 ms</em>:</p><p><img src=old_load_speed.png alt="The old page load shows around 800 kB of transferred data in 800ms"></p><p>The final page has nearly 500kB of vendored javascript (the <code>main.min.js</code> line)!</p><p>I felt like I could do better, while retaining the attractive parts of the website.
+I started off by looking at other tech blogs for inspiration.
+<a href=https://jvns.ca/>Julia Evans</a>&rsquo;s blog caught my eye, so when I had the chance
+(read: going stir-crazy in my apartment), I whipped open the Hugo documentation
+and found a <a href=https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/>tutorial</a>
+on making your own template.</p><h2 id=key-size-and-loading-speed-considerations>Key size and loading speed considerations</h2><p>Two days later, I was done!
+Conveniently, my new template allowed me to use all of my Markdown I had already written for my website.
+I could really dig into making sure I had minimal loading sizes and loading times.
+At a top-level, I found it helpful to do the following:</p><ul><li>Use a tool like <a href=https://icomoon.io>icomoon</a> to generate an icon-font including <em>only</em>
+the icons you plan on using. Icon sets like Font Awesome are great, but they are also large.</li><li>Make sure that all of your <code>&lt;img></code> tags specify an explicit width and height. This way, your
+browser can fully layout the page before the image finishes downloading.</li><li>Exploit modern HTML5 and CSS practices for the &ldquo;interactivity&rdquo; you need on a static site.
+My entire site loads without Javascript (except the Plausible script).</li></ul><p>How did I do on page size and load speed?</p><p><img src=new_load_speed.png alt="The new page load shows only 75kB of transfer and load in 282ms"></p><p>The page now transfers just <strong>75 kB</strong> and loads
+in <strong>282ms</strong>. I&rsquo;ll take a 10x decrease in page size and a 4x decrease in page render time!
+As a note, the largest transfer at 34kB is actually now the favicon which does not block
+page loading.</p><p>Finally, while Lighthouse (Google&rsquo;s page-load benchmarker) scores are probably a metric you
+shouldn&rsquo;t be explicitly optimizing for, it was nice to see 100% Lighthouse scores from my template!</p><p><img src=final_lighthouse.png alt="Google Lighthouse results showing 100% in each category"></p><h2 id=moving-forward>Moving forward</h2><p>I&rsquo;m happy with the new layout of my website. It makes tracking publications and blog
+posts much easier. Will this translate into more blogging or more frequent updates?
+Only time will tell.</p></div></div></div><div class=spacer><hr><hr></div><div class=footer><p>This site uses a self-hosted <a href=https://plausible.io/>Plausible</a> instance for visitor counting in a cookie-free, open-source, and privacy-preserving manner.</p><p>&copy; Christopher Johnstone 2022</p></div></div></body></html>
