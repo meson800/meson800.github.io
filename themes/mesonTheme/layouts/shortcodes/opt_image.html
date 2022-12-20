@@ -1,0 +1,25 @@
+{{/* From https://laurakalbag.com/processing-responsive-images-with-hugo/ */}}
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+
+{{ .Scratch.Set "small" ($src.Resize "250x webp q90") }}
+{{ .Scratch.Set "medium" ($src.Resize "550x webp q90") }}
+{{ .Scratch.Set "large" ($src.Resize "1200x webp q90") }}
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+
+<img 
+  {{ with .Get "sizes" }}sizes='{{.}}'{{ else }}sizes="(min-width: 35em) 1200px, 100vw"{{ end }}
+  srcset='
+  {{ if ge $src.Width "250" }}
+    {{ with $small.RelPermalink }}{{.}} 250w{{ end }}
+  {{ end }}
+  {{ if ge $src.Width "550" }}
+    {{ with $medium.RelPermalink }}, {{.}} 550w{{ end }}
+  {{ end }}
+  {{ if ge $src.Width "1200" }}
+    {{ with $large.RelPermalink }}, {{.}} 1200w{{ end }}
+  {{ end }}'
+    src="{{ $src.RelPermalink }}" 
+  {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}
+>
