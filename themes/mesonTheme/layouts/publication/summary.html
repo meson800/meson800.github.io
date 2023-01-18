@@ -3,13 +3,13 @@
 {{ $bib   := .Resources.GetMatch "cite.bib" }}
 
 <article class="publication">
-  <div id="summary-body">
+  <div class="summary-body">
     <h3 class="summary-title"><a href='{{ .Permalink }}'>{{ .Title }} ({{ .Date.Format "2006" }})</a></h3>
     {{ if isset .Params "journal" }}
       <i>{{ .Param "journal" }}</i>
     {{ end }}
     {{/* Author list from https://github.com/wowchemy/wowchemy-hugo-themes, MIT license by Geo Cushen */}}
-    <div id="authors">
+    <div class="authors">
       {{- range $index, $value := (.GetTerms "authors") -}}
         {{- if gt $index 0 }}, {{ end -}}
         {{- if .RelPermalink -}}
@@ -24,7 +24,7 @@
         {{- end -}}
       {{- end -}}
     </div>
-    <div id="summary-buttons">
+    <div class="summary-buttons">
       {{ if ne $pdf nil }}
         <a class="summary-button" href="{{ $pdf.RelPermalink }}" target="_blank" rel="noopener">PDF</a>
       {{ else }}
@@ -43,9 +43,9 @@
   </div>
   {{ if ne $image nil }}
     {{ $summary_image := $image.Fit "150x150 webp q90" }}
-    <div id="summary-image">
+    <div class="summary-image">
       <img src="{{ $summary_image.RelPermalink }}"
-           width="{{ $summary_image.Width }}", height="{{ $summary_image.Height }}"
+           width="{{ $summary_image.Width }}" height="{{ $summary_image.Height }}"
            alt="{{ .Title }}">
     </div>
   {{ end }}

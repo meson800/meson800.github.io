@@ -6,12 +6,12 @@
 {{ $dateTime := .PublishDate.Format "2006-01-02" }}
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
 <h1>{{ .Title }}</h1>
-<div id="summary-body">
+<div class="summary-body">
 {{ if isset .Params "journal" }}
     <i>{{ .Param "journal" }}, {{ .Date.Format "2006" }}</i>
 {{ end }}
 {{/* Author list from https://github.com/wowchemy/wowchemy-hugo-themes, MIT license by Geo Cushen */}}
-<div id="authors">
+<div class="authors">
     {{- range $index, $value := (.GetTerms "authors") -}}
     {{- if gt $index 0 }}, {{ end -}}
     {{- if .RelPermalink -}}
@@ -26,7 +26,7 @@
     {{- end -}}
     {{- end -}}
 </div>
-<div id="summary-buttons">
+<div class="summary-buttons">
     {{ if ne $pdf nil }}
     <a class="summary-button" href="{{ $pdf.RelPermalink }}" target="_blank" rel="noopener">PDF</a>
     {{ else }}

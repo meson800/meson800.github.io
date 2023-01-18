@@ -190,10 +190,10 @@ a {
   text-decoration: none;
 }
 
-#authors a {
+.authors a {
   color: var(--text);
 }
-#authors a:hover {
+.authors a:hover {
   text-decoration: underline;
 }
 
@@ -280,7 +280,7 @@ figure {
   margin-top: 1em;
 }
 
-#summary-image {
+.summary-image {
   width: 150px;
   flex-shrink: 0;
   align-self: center;
@@ -288,7 +288,7 @@ figure {
   margin-right: 0px;
 }
 
-#summary-body {
+.summary-body {
   margin-right:32px;
 }
 
@@ -297,17 +297,17 @@ figure {
     flex-wrap: wrap;
   }
 
-  #summary-body {
+  .summary-body {
     margin-right:auto;
   }
 
-  #summary-image {
+  .summary-image {
     margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
   }
 
-  #summary-buttons {
+  .summary-buttons {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
@@ -315,7 +315,7 @@ figure {
 
 }
 
-#summary-buttons {
+.summary-buttons {
   display: block;
 }
 

@@ -3,7 +3,7 @@
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
 
 <article class="post">
-  <div id="summary-body">
+  <div class="summary-body">
     <h3 class="summary-title"><a href='{{ .Permalink }}'>{{ .Title }}</a></h3>
     <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
     <a class="summary" href="{{ .RelPermalink }}">
@@ -12,9 +12,9 @@
   </div>
   {{ if ne $image nil }}
     {{ $summary_image := $image.Fit "150x150 webp q90" }}
-    <div id="summary-image">
+    <div class="summary-image">
       <img src="{{ $summary_image.RelPermalink }}"
-           width="{{ $summary_image.Width }}", height="{{ $summary_image.Height }}"
+           width="{{ $summary_image.Width }}" height="{{ $summary_image.Height }}"
            alt="{{ .Title }}">
     </div>
   {{ end }}
