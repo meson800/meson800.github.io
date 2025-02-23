@@ -4,7 +4,7 @@
 
 <article class="publication">
   <div class="summary-body">
-    <h3 class="summary-title"><a href='{{ .Permalink }}'>{{ .Title }} ({{ .Date.Format "2006" }})</a></h3>
+    <h3 class="summary-title"><a href='{{ .RelPermalink }}'>{{ .Title }} ({{ .Date.Format "2006" }})</a></h3>
     {{ if isset .Params "journal" }}
       <i>{{ .Param "journal" }}</i>
     {{ end }}

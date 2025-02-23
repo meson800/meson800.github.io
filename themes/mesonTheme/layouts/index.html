@@ -6,9 +6,9 @@
 <div class="interspacer">
     <hr>
 </div>
-<h2 class="recent-list">Recent publications <a href="/publication">(see more)</a></h2>
+<h2 class="recent-list">Featured publications <a href="/publication">(see all)</a></h2>
 
-{{ range first 3 (where (where .Site.Pages "Type" "==" "publication" ) "Params.featured" "==" true) }}
+{{ range first 4 (where (where .Site.Pages "Type" "==" "publication" ) "Params.featured" "==" true) }}
     {{ .Render "summary" }}
 {{ end }}
 

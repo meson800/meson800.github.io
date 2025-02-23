@@ -49,7 +49,6 @@ I also enjoy programming. I currently administer several personal websites, in a
 
 - [rushd](https://github.com/GallowayLabMIT/rushd), for reproducible data analysis in Python.
 - [touchstone-auth](https://github.com/meson800/touchstone-auth), for programmatically accessing MIT services.
-- [cydnus](https://github.com/meson800/cydnus), a open-source flow cytometry analysis package.
 
 
 When I'm not doing research or programming, I like to dabble: 3D modeling and animation, video editing, sailing, quadcopters, and rocket building have all been recent interests of mine. The posts on this website may be eclectic as a result :)
