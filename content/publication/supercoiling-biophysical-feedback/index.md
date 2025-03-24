@@ -15,8 +15,6 @@ authors:
   - "Richard P. Davis"
   - "Brandon J. DeKosky"
   - "Peter W. Zandstra"
-  - "Emma L. Peterman"
-  - "Stephanie Gaglione"
   - "Kate E. Galloway"
 
 date: 2025-01-19
