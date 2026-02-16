@@ -31,9 +31,9 @@ publication_types: ["3"]
 
 # Publication name and optional abbreviated publication name.
 publication: "Gene syntax defines supercoiling-mediated transcriptional feedback"
-journal: In review
+journal: In press
 
-abstract: "Gene syntax—the order and arrangement of genes and their regulatory elements—shapes the dynamic coordination of both natural and synthetic gene circuits. Transcription at one locus profoundly impacts the transcription of nearby adjacent genes, but the molecular basis of this effect remains poorly understood. Here, using integrated reporter circuits in human cells, we show that supercoiling-mediated feedback regulates expression of adjacent genes in a syntax-specific manner. Using Region Capture Micro-C, we measure induction-dependent formation of supercoiled plectonemes and syntax-specific chromatin structures in human induced pluripotent stem cells. Using syntax as a design parameter, we built compact gene circuits, tuning the mean, variance, and stoichiometries of expression across diverse delivery methods and cell types. Integrating supercoiling-mediated feedback into models of gene regulation will expand our understanding of native systems and enhance the design of synthetic gene circuits."
+abstract: "Gene syntax—the order and arrangement of genes and their regulatory elements— shapes the dynamic coordination of both natural and synthetic gene circuits. Transcription at one locus perturbs the transcription of adjacent genes, but the molecular basis of this effect remains poorly understood. Here, we show that supercoiling-mediated feedback arises from transcription and regulates expression of adjacent genes in a syntax-specific manner. Using a suite of assays, we measured syntax- and induction-dependent formation of chromatin structures in human induced pluripotent stem cells. Applying syntax as a design parameter, we built and improved compact gene circuits, tuning the expression mean, noise, and stoichiometry across delivery methods and cell types. Integrating supercoiling mediated feedback into models of gene regulation will expand our understanding of native and synthetic systems."
 
 # Summary. An optional shortened abstract.
 summary: ""
